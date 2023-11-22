@@ -8,7 +8,7 @@ def k_means(X, K, max_iters=100):
         # Étape 2: Affectation des points aux clusters
         distances = np.sqrt(((X - centroids[:, np.newaxis])**2).sum(axis=2))
         closest_cluster = np.argmin(distances, axis=0)
-        print(closest_cluster)
+        
         # Étape 3: Mise à jour des centroïdes
         new_centroids = np.array([X[closest_cluster==k].mean(axis=0) for k in range(K)])
 
